@@ -1,13 +1,25 @@
 .peculiarities {
-  display: flex;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+  }
 }
 
 .peculiarities__item {
-  flex-basis: 270px;
-}
+  & + & {
+    @media screen and (max-width: 767px) {
+      margin-top: 30px;
+    }
+  }
 
-.peculiarities__item + .peculiarities__item {
-  margin-left: 30px;
+  @media screen and (min-width: 768px) {
+    flex-basis: calc((100% - 60px) / 2);
+    margin: 15px;
+  }
+  @media screen and (min-width: 1200px) {
+    flex-basis: calc((100% - 120px) / 4);
+  }
 }
 
 .peculiarities__box {
@@ -25,6 +37,10 @@
   text-transform: uppercase;
 
   color: var(--title-text-color);
+
+  @media screen and (max-width: 767px) {
+    text-align: center;
+  }
 }
 
 .peculiarities__text {

@@ -1,15 +1,27 @@
 .clients {
   @include flexcenter();
-  margin-top: 50px;
+  flex-wrap: wrap;
+  margin: 15px -15px -15px;
+  @media screen and (min-width: 1200px) {
+    margin: 35px -15px -15px;
+  }
 }
 
-.clients__item + .clients__item {
-  margin-left: 30px;
+.clients__item {
+  margin: 15px;
+  flex-basis: calc((100% - 60px) / 2);
+
+  @media screen and(min-width:768px) {
+    flex-basis: calc((100% - 90px) / 3);
+  }
+  @media screen and (min-width: 1200px) {
+    flex-basis: calc((100% - 180px) / 6);
+  }
 }
 
 .clients__link {
   @include flexcenter();
-  padding: 15px 31px;
+  padding: 15px 0;
   border: 1px solid;
   border-radius: 4px;
 
