@@ -1,9 +1,25 @@
 .filter {
   @include flexcenter();
+  flex-wrap: wrap;
+
+  @media screen and (max-width: 767px) {
+    justify-content: flex-start;
+    margin-top: -15px;
+    margin-left: -8px;
+  }
 }
 
-.filter__item + .filter__item {
-  margin-left: 8px;
+.filter__item {
+  @media screen and (max-width: 767px) {
+    margin-top: 15px;
+    margin-left: 8px;
+  }
+
+  & + & {
+    @media screen and (min-width: 768px) {
+      margin-left: 8px;
+    }
+  }
 }
 
 .filter__btn {
@@ -34,19 +50,37 @@
 }
 
 .projects {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 20px;
-  margin-left: -30px;
+  margin-top: 10px;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 15px -15px -15px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin: 35px -15px -15px;
+  }
 }
 
 .projects__item {
-  flex-basis: calc(var(--width-container)-90px) / 3;
   margin-top: 30px;
-  margin-left: 30px;
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    flex-basis: calc((100% - 60px) / 2);
+    margin: 15px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    flex-basis: calc((100% - 90px) / 3);
+  }
 }
 
 .project__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
@@ -89,6 +123,8 @@
   padding: 20px 24px;
   border: 1px solid #eeeeee;
   border-top: none;
+
+  flex-grow: 1;
 }
 
 .projects__title {
