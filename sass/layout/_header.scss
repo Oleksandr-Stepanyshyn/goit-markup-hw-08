@@ -133,6 +133,12 @@
   padding: 0;
   background-color: transparent;
   border: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    fill: var(--accent-color);
+  }
 }
 
 .mob-menu {
@@ -163,8 +169,10 @@
   right: 15px;
 }
 
-.mob-menu__item-pages + .mob-menu__item-pages {
-  margin-top: 32px;
+.mob-menu__item-pages {
+  & + & {
+    margin-top: 32px;
+  }
 }
 
 .mob-menu__link-pages {
@@ -189,8 +197,10 @@
   margin-top: auto;
 }
 
-.mob-menu__item-contacts + .mob-menu__item-contacts {
-  margin-top: 32px;
+.mob-menu__item-contacts {
+  & + & {
+    margin-top: 32px;
+  }
 }
 
 .mob-menu__link-contacts--tel {
@@ -200,6 +210,11 @@
   letter-spacing: 0.02em;
 
   color: var(--accent-color);
+
+  &:hover,
+  &:focus {
+    color: var(--title-text-color);
+  }
 }
 
 .mob-menu__link-contacts--mail {
@@ -209,6 +224,11 @@
   letter-spacing: 0.02em;
 
   color: var(--primary-text-color);
+
+  &:hover,
+  &:focus {
+    color: var(--title-text-color);
+  }
 }
 
 .mob-menu__list-social {
@@ -246,4 +266,9 @@
   letter-spacing: 0.02em;
 
   color: var(--accent-color);
+
+  &:hover,
+  &:focus {
+    color: var(--title-text-color);
+  }
 }
