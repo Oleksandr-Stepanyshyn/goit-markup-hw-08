@@ -183,8 +183,7 @@ img {
 
 .modal {
   position: absolute;
-  width: 528px;
-  height: 581px;
+  width: 450px;
   top: 50%;
   left: 50%;
   padding: 40px;
@@ -192,6 +191,18 @@ img {
   background-color: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+}
+
+@media screen and (max-width: 450px) {
+  .modal {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .modal {
+    width: 528px;
+  }
 }
 
 .modal__btn-close {
@@ -216,17 +227,27 @@ img {
   fill: inherit;
 }
 
+.modal__form {
+  text-align: center;
+}
+
 .modal__title {
-  /* display: block; */
   font-weight: 700;
   font-size: 20px;
-  line-height: 23px;
+  line-height: 1.5;
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--title-text-color);
 }
 
+@media screen and (min-width: 1200px) {
+  .modal__title {
+    line-height: 1.15;
+  }
+}
+
 .modal__list {
+  text-align: start;
   margin-top: 12px;
 }
 
@@ -307,11 +328,19 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   font-weight: 400;
-  font-size: 14px;
-  line-height: calc(24 / 14);
+  font-size: 12px;
+  line-height: calc(14 / 12);
   color: #757575;
   cursor: pointer;
+}
+
+@media screen and (min-width: 1200px) {
+  .check__label {
+    font-size: 14px;
+    line-height: calc(24 / 14);
+  }
 }
 
 .check__icon {
