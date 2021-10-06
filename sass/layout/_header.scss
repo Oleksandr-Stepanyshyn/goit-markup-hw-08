@@ -4,6 +4,7 @@
 
 .header__container {
   display: flex;
+  align-items: center;
   @media screen and (max-width: 767px) {
     justify-content: space-between;
   }
@@ -75,20 +76,18 @@
 }
 
 .contacts {
-  @include flexcenter();
   margin-left: auto;
-  align-items: start;
 
   @media screen and (max-width: 767px) {
     display: none;
   }
 
-  @media screen and (max-width: 1199px) {
-    flex-direction: column;
+  @media screen and (min-width: 1200px) {
+    @include flexcenter();
   }
 }
 
-.contacts__item:not(:first-child) {
+.contacts__item:last-child {
   @media screen and (max-width: 1199px) {
     margin-top: 10px;
   }
@@ -99,7 +98,7 @@
 }
 
 .contacts__link {
-  @include flexcenter();
+  @include flexcenter($jc: start);
 
   @media screen and (min-width: 1200px) {
     padding-top: 33px;
